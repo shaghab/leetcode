@@ -13,7 +13,7 @@
  * @param {number} val
  * @return {TreeNode}
  */
-var searchBST = (root, val) => {
+const searchBST = (root, val) => {
   if (root === null) return null;
   if (root.val === val) return root;
 
