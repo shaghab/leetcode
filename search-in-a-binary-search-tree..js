@@ -13,12 +13,15 @@
  * @param {number} val
  * @return {TreeNode}
  */
-var searchBST = function (root, val) {
+var searchBST = (root, val) => {
   if (root === null) return null;
   if (root.val === val) return root;
-  let ans = searchBST(root.left, val);
+
+  let ans = null;
+  if (root.left !== null) ans = searchBST(root.left, val);
   if (ans !== null) return ans;
-  ans = searchBST(root.right, val);
+
+  if (root.right !== null) ans = searchBST(root.right, val);
   if (ans !== null) return ans;
 
   return null;
